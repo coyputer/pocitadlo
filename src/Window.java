@@ -34,7 +34,7 @@ public class Window extends JFrame {
 				.getScreenSize()
 				.getHeight() / deviceScale / 2);
 		
-		BufferedImage icon = ImageIO.read(new File("D:\\telefon\\coding\\pocitadlo\\Pocitadlo\\files\\icon.png"));
+		BufferedImage icon = ImageIO.read(new File(Pocitadlo.path + Pocitadlo.iconName));
 		
 		setIconImage(icon);
 		setSize(trueWidth, trueHeight);

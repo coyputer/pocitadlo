@@ -29,7 +29,9 @@ public class Pocitadlo extends Window implements ActionListener {
 	/**
 	 * 
 	 */
-	private String pathName = "D:\\telefon\\coding\\pocitadlo\\Pocitadlo\\files\\count.txt";
+	public static String path = "D:\\telefon\\coding\\pocitadlo\\Pocitadlo\\files";
+	private String fileName = "\\count.txt";
+	public static String iconName = "\\icon.png";
 	private int pocetOtazok = 162;
 	
 	private static final long serialVersionUID = 703823023777029896L;
@@ -46,7 +48,7 @@ public class Pocitadlo extends Window implements ActionListener {
 		pocetPrejdenych = 0;
 		
 		try {
-			BufferedReader vstup = new BufferedReader(new FileReader(pathName));
+			BufferedReader vstup = new BufferedReader(new FileReader(path + fileName));
 			pocetPrejdenych = Integer.parseInt(vstup.readLine());
 			vstup.close();
 		} catch (Exception e) {
@@ -120,7 +122,7 @@ public class Pocitadlo extends Window implements ActionListener {
 		status.setText(Integer.toString(pocetPrejdenych) + "/" + Integer.toString(pocetOtazok));
 		
 		try {
-			BufferedWriter vystup = new BufferedWriter(new FileWriter(pathName));
+			BufferedWriter vystup = new BufferedWriter(new FileWriter(path + fileName));
 			vystup.write(Integer.toString(pocetPrejdenych));
 			vystup.close();
 		} catch (Exception e2) {
